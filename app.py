@@ -7,7 +7,12 @@ CORS(app)
 @app.route('/api/data', methods=['POST'])
 def receive():
     data = request.json
-    print("📍 Location received:", data)
+    print("="*50)
+    print("📍 LOCATION RECEIVED:")
+    print(f"Latitude: {data.get('latitude')}")
+    print(f"Longitude: {data.get('longitude')}")
+    print(f"Accuracy: {data.get('accuracy')}")
+    print("="*50)
     return jsonify({"status": "success"})
 
 @app.route('/')
